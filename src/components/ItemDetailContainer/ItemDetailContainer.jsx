@@ -1,28 +1,36 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { getUnProducto } from '../../../asyncmock';
-import ItemDetail from '../ItemDetail/ItemDetail';
+import React, { useEffect, useState } from 'react'
+import ItemDetail from '../ItemDetail/ItemDetail'
+import { useParams } from 'react-router-dom'
+import { db } from '../../services/config'
+import {getDoc, doc} from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
-  const [producto, setProducto] = useState(null);
-  const { id, idItem } = useParams(); // Obtener ambos id y idItem
-  
-  useEffect(() => {
-    const itemId = id || idItem; // Usar id o idItem dependiendo de la ruta
-    console.log("ID recibido desde useParams:", itemId);
-    getUnProducto(itemId)
-      .then((res) => {
-        console.log("Producto encontrado:", res);
-        setProducto(res);
+
+    const [producto, setProducto] = useState(null)
+    const {idItem} = useParams()
+
+  useEffect(()=>{
+    const nuevoDoc = doc(db, "productos", idItem)
+
+    getDoc(nuevoDoc)
+      .then(res => {
+        const data = res.data();
+        const nuevosProducto = {id: res.id,...data}
+        setProducto(nuevosProducto)
       })
-      .catch((err) => console.error(err));
-  }, [id, idItem]); // Ejecutar el efecto cuando cambien id o idItem
+      .catch(error => console.log(error))
+  }, [idItem])
+
+    
+
+
 
   return (
     <div>
-      {producto ? <ItemDetail producto={producto} /> : <p>Cargando detalles...</p>}
+        <ItemDetail {...producto}/>
     </div>
-  );
-};
+  )
+}
 
-export default ItemDetailContainer;
+
+export default ItemDetailContainer

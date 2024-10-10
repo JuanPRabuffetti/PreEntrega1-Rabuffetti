@@ -1,4 +1,4 @@
-export const products = [
+/*export const products = [
   { id: "1", nombre: "Remera negra", stock: 10, precio: 10000, img: "/img/remera1.webp", idCat: "remeras" },
   { id: "2", nombre: "Remera azul", stock: 12, precio: 200, img: "/img/remera2.webp", idCat:"remeras" },
   { id: "3", nombre: "Remera marron", stock: 5, precio: 300, img: "/img/remera3.webp", idCat:"remeras" },
@@ -40,4 +40,4 @@ export const getProductosPorCategorias = (idCategoria) => {
     }, 100);
   });
 };
-
+*/
