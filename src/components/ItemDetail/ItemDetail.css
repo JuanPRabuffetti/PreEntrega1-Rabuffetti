@@ -1,9 +1,74 @@
-.contenedorItem{
+.contenedorItem {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border: 1px solid black;
-    margin: 4rem;
 }
 
-img{
-    width: 35vw;
+/* Título del producto */
+.contenedorItem h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+/* Información adicional del producto */
+.contenedorItem h3 {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Imagen del producto */
+.contenedorItem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Descripción del producto */
+.contenedorItem p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el botón de Terminar Compra */
+.terminarCompra {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Efectos para el botón */
+.terminarCompra:hover {
+    background-color: #0056b3;
+}
+
+.terminarCompra:active {
+    transform: scale(0.98);
+}
+
+/* Estilo del componente Contador */
+.contenedorItem .contador-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
 }

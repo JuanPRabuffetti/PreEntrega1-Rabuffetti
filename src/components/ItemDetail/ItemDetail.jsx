@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './ItemDetail.css';
 import Contador from '../Contador/Contador';
-// import { CarritoContext } from '../../context/CarritoContext';
-// import { useContext } from 'react';
+ import { CarritoContext } from '../../context/CarritoContext';
+ import { useContext } from 'react';
 
 const ItemDetail = ({ id, nombre, precio, img, stock, descripcion }) => {
     const [agregarCantidad, setAgregarCantidad] = useState(0);
-
+    const {agregarAlCarrito} = useContext(CarritoContext)
     const manejadorCantidad = (cantidad) => {
         setAgregarCantidad(cantidad);
 
