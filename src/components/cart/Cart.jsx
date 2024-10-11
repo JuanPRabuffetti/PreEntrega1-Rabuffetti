@@ -11,7 +11,7 @@ const Cart = () => {
     if (cantidadTotal === 0) {
         return (
             <div className="carrito-vacio">
-                <h2>No hay productos en el carrito. Compra o vete!!!</h2>
+                <h2>No hay productos en el carrito.</h2>
                 <Link to="/" className="ver-productos">Ver Productos</Link>
             </div>
         );

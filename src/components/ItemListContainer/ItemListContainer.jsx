@@ -29,7 +29,7 @@ const ItemListContainer = () => {
 
     return (
         <>
-            <h2 style={{ textAlign: "center" }}>Mis Productos</h2>
+            <h2 style={{ textAlign: "center" }}>Productos</h2>
             {loading ? <Loader/> : <ItemList productos={productos}/>}
 
         </>
