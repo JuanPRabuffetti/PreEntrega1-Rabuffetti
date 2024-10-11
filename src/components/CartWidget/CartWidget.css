@@ -3,7 +3,6 @@
     display: inline-block;
 }
 
-/* Estilo del ícono del carrito */
 .carrito-icono {
     width: 40px;
     height: 40px;
@@ -11,12 +10,10 @@
     transition: transform 0.2s;
 }
 
-/* Efecto al pasar el cursor sobre el ícono */
 .carrito-icono:hover {
     transform: scale(1.1);
 }
 
-/* Estilo para la cantidad total de productos */
 .cantidad-total {
     position: absolute;
     top: -5px;
